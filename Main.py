@@ -12,15 +12,17 @@ Clamp = Functions.Clamp
 Numerical = Functions.Numerical
 
 print("Welcome to a quick and simple Python Fundamentals tutorial!")
-##time.sleep(2)
+time.sleep(2)
 print("Here, you're able to learn the basics for the programming language known as python!")
-##time.sleep(2)
+time.sleep(2)
 print("Have fun!")
-##time.sleep(2)
+time.sleep(2)
 print("\n" * 100)
 
 Lessons = General.Lessons
 LessonsKey = list(Lessons.keys())
+
+
 def Choices():
     Input = Clamp(
         Numerical(input(f"Select which lesson you'd like to proceed with from the following.\n")),
@@ -29,7 +31,7 @@ def Choices():
     )
 
     print("\n" * 100)
-    Lesson : str = LessonsKey[Input - 1]
+    Lesson: str = LessonsKey[Input - 1]
     LessonList = list(Lesson)
     LessonListKeys = list(Lessons[Lesson].keys())
 
@@ -70,7 +72,8 @@ def Choices():
                     print("\n" * 100)
                     Tutorials.Tutorials[Description["Tutorial"]]()
                     End = Clamp(Numerical(
-                        input(f"Press {Text("1", "Yellow")} to continue testing out the code, {Text("2", "Red")} to go back to the menu!\n")),
+                        input(
+                            f"Press {Text("1", "Yellow")} to continue testing out the code, {Text("2", "Red")} to go back to the menu!\n")),
                         1,
                         2)
                     if End == 2:
@@ -84,10 +87,13 @@ def Choices():
             Proceed = input(f"Press {Text("Any Input", "Yellow")} to proceed.")
             Start()
 
+
 def Start():
     print("\n" * 100)
     print(Text("=", "Green") * 100)
-    print(Space("Python Fundamentals!", 50 + 10, False, False) + Text("PY", "Blue", True) + Text("THON", "Yellow", True) + Text(" FUNDAMENTALS!", "Blue", True))
+    print(Space("Python Fundamentals!", 50 + 10, False, False) + Text("PY", "Blue", True) + Text("THON", "Yellow",
+                                                                                                 True) + Text(
+        " FUNDAMENTALS!", "Blue", True))
     print(Text("=", "Green") * 100)
 
     time.sleep(.5)
@@ -95,5 +101,6 @@ def Start():
         print(f"{LessonsKey.index(Lesson) + 1})", Text(Lesson, "Green"))
 
     Choices()
+
 
 Start()
